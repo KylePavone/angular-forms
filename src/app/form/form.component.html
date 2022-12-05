@@ -1,0 +1,9 @@
+<form [formGroup]="myForm" action="" (ngSubmit)="whenSubmit(myForm.value)">
+    <div class="field">
+        <input [formControl]="$any(myForm).controls['name']" type="text">
+        <div *ngIf="!inputValue.valid" style="color: red;">Field is required!</div>
+        <div *ngIf="inputValue.hasError('invalidValue')" style="color: red;">Сам сука!</div>
+    </div>
+
+    <button class="button">Submit</button>
+</form>
